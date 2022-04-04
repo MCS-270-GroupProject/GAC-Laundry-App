@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Who Let The Clothes Out</string>
+
+    <string name="sohre_button">Sohre</string>
+    <string name="pittman_button">Pittman</string>
+    <string name="norelius_button">Norelius</string>
+
+    <string name="welcome_message">"Gustavus Laundry App"</string>
+    <string name="purpose_message">"Let\'s get your clothes cleaned!!"</string>
+
+    <string name="instruction_message">"Click on the building and choose your machine to get started!"</string>
+
+
 </resources>
