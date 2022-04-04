@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoLetTheClothesOut">
         <activity
+            android:name=".NoreliusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PittmanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SohreActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
