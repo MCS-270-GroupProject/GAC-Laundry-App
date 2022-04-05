@@ -10,5 +10,17 @@
 
     <string name="instruction_message">"Click on the building and choose your machine to get started!"</string>
 
+    <string name="norelius_machines">Norelius Machines</string>
+    <string name="washing_1">Washing Machine 1</string>
+    <string name="washing_2">Washing Machine 2</string>
+    <string name="washing_3">Washing Machine 3</string>
+    <string name="washing_4">Washing Machine 4</string>
+    <string name="washing_5">Washing Machine 5</string>
+    <string name="drying_1">Drying Machine 1</string>
+    <string name="drying_2">Drying Machine 2</string>
+    <string name="drying_3">Drying Machine 3</string>
+    <string name="drying_4">Drying Machine 4</string>
+    <string name="drying_5">Drying Machine 5</string>
+
 
 </resources>

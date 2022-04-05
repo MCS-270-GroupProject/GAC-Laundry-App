@@ -42,6 +42,7 @@
             android:id="@+id/sohreButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="120dp"
             android:text="@string/sohre_button">
         </Button>
@@ -50,6 +51,7 @@
             android:id="@+id/pittmanButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:text="@string/pittman_button"
             android:layout_marginTop="20dp">
         </Button>
@@ -58,6 +60,7 @@
             android:id="@+id/noreliusButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:text="@string/norelius_button"
             android:layout_marginTop="20dp">
         </Button>
@@ -67,7 +70,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="550dp"
         android:textStyle="italic"
         android:textSize="18dp"
         android:text="@string/instruction_message"
