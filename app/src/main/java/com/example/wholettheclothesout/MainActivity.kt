@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pittmanButton: Button
     private lateinit var noreliusButton: Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate(Bundle?) called")
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         sohreButton = findViewById(R.id.sohreButton)
         pittmanButton = findViewById(R.id.pittmanButton)
         noreliusButton = findViewById(R.id.noreliusButton)
+
 
         sohreButton.setOnClickListener {
             val intent = Intent(this, SohreActivity::class.java)
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, NoreliusActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onStart() {
