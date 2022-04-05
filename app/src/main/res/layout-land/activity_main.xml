@@ -8,34 +8,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="36dp"
-        android:padding="24dp"
+        android:layout_marginTop="28dp"
         android:textStyle="bold"
         android:textSize="24dp"
-        android:text="@string/welcome_message"/>
+        android:text="@string/welcome_message"
+        android:textColor="@color/black"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="72dp"
         android:textSize="18dp"
-        android:text="@string/purpose_message"/>
+        android:text="@string/purpose_message"
+        android:textColor="@color/black"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="350dp"
-        android:textStyle="bold"
+        android:layout_marginTop="280dp"
+        android:textStyle="italic"
         android:textSize="18dp"
-        android:text="@string/instruction_message"/>
+        android:text="@string/instruction_message"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/laundry_logo"
+        android:layout_marginLeft="180dp"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="90dp">
 
         <Button
             android:id="@+id/sohreButton"
