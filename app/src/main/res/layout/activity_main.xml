@@ -8,19 +8,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="72dp"
-        android:padding="24dp"
+        android:layout_marginTop="44dp"
         android:textStyle="bold"
         android:textSize="24dp"
-        android:text="@string/welcome_message"/>
+        android:text="@string/welcome_message"
+        android:textColor="@color/black"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="90dp"
         android:textSize="18dp"
-        android:text="@string/purpose_message"/>
+        android:text="@string/purpose_message"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/laundry_logo"
+        />
 
 
     <LinearLayout
@@ -33,7 +42,7 @@
             android:id="@+id/sohreButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="120dp"
             android:text="@string/sohre_button">
         </Button>
 
@@ -55,13 +64,14 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="500dp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         android:textSize="18dp"
-        android:text="@string/instruction_message"/>
+        android:text="@string/instruction_message"
+        android:textColor="@color/black"/>
 
 
 </FrameLayout>
