@@ -70,7 +70,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="500dp"
         android:textStyle="italic"
         android:textSize="18dp"
         android:text="@string/instruction_message"

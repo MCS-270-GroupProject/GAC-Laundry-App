@@ -1,105 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:padding="12dp"
-        android:textStyle="bold"
-        android:textSize="24dp"
-        android:text="@string/norelius_machines"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:text="@string/norelius_machines"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/washing_1"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="108dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/washing_2"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_4"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="156dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/washing_3"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_5"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="204dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/washing_4"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="252dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/washing_5"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="348dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/drying_1"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="348dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/drying_2"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="444dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_4"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="396dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/drying_3"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_5"/>
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/back_button"
-        android:textSize="20dp"
-        android:layout_marginTop="540dp">
-    </Button>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="444dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/drying_4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="492dp"
+                android:padding="12dp"
+                android:textSize="18dp"
+                android:text="@string/drying_5"/>
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back_button"
+                android:textSize="20dp"
+                android:layout_marginTop="540dp">
+            </Button>
 
 
-</FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

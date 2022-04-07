@@ -9,7 +9,7 @@ class SohreActivity : AppCompatActivity() {
     private lateinit var backButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_norelius)
+        setContentView(R.layout.activity_sohre)
         backButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
