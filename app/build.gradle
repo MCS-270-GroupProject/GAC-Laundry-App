@@ -32,6 +32,12 @@ android {
 }
 
 dependencies {
+    implementation "com.android.volley:volley:1.2.0"
+
+// below line is use for image loading library
+
+    implementation "com.squareup.picasso:picasso:2.71828"
+
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
