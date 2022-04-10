@@ -1,10 +1,25 @@
 package com.example.wholettheclothesout
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import layout.UserModal
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.IOException
+import java.nio.charset.Charset
+
 
 private const val TAG = "MainActivity"
 
@@ -13,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sohreButton: Button
     private lateinit var pittmanButton: Button
     private lateinit var noreliusButton: Button
+    private var requestQueue: RequestQueue? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         sohreButton = findViewById(R.id.sohreButton)
         pittmanButton = findViewById(R.id.pittmanButton)
         noreliusButton = findViewById(R.id.noreliusButton)
+        requestQueue = Volley.newRequestQueue(this)
 
 
         sohreButton.setOnClickListener {
@@ -39,7 +56,66 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        jsonParse()
     }
+
+//    private fun getDataFromAPI() {
+//        val url = "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
+//
+//        val queue = Volley.newRequestQueue(this@MainActivity)
+//        Log.d(TAG, "API called")
+//
+//        val jsonObjectRequest =
+//            JsonObjectRequest(Request.Method.GET, url, null,  Response.Listener {
+////                fun onResponse(response: JSONObject) {
+////                    loadingPB.setVisibility(View.GONE)
+//                    response ->
+//                {
+//                    try {
+//                        val feedObj = response.getJSONObject("feed")
+//                        val entryArray = feedObj.getJSONArray("entry")
+//                        for (i in 0 until entryArray.length()) {
+//                            val entryObj = entryArray.getJSONObject(i)
+//                            val machineName =
+//                                entryObj.getJSONObject("gsx\$MachineName").getString("\$t")
+//                            val availability =
+//                                entryObj.getJSONObject("gsx\$Availability").getString("\$t")
+//                            Log.d(TAG, "$i $machineName $availability")
+//                        }
+//                    } catch (e: JSONException) {
+//                        e.printStackTrace()
+//                    }
+//                }
+//            }catch(e: JSON Exception) { // handline on error listener method.
+//                Toast.makeText(this@MainActivity, "Fail to get data..", Toast.LENGTH_SHORT)
+//                    .show()
+//            }
+//        // calling a request queue method
+//        // and passing our json object
+//        // calling a request queue method
+//        // and passing our json object
+//        queue.add(jsonObjectRequest)
+//
+//    }
+    private fun jsonParse() {
+        val url = "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
+        val request = JsonObjectRequest(Request.Method.GET, url, null, Response.Listener {
+                response ->try {
+            val jsonArray = response.getJSONArray("employees")
+            for (i in 0 until jsonArray.length()) {
+                val employee = jsonArray.getJSONObject(i)
+                val machineName = employee.getString("MachineName")
+                val availability = employee.getInt("availability")
+                Log.d(TAG, "$i $machineName $availability")
+//                textView.append("$firstName, $age, $mail\n\n")
+            }
+        } catch (e: JSONException) {
+            e.printStackTrace()
+        }
+        }, Response.ErrorListener { error -> error.printStackTrace() })
+        requestQueue?.add(request)
+    }
+
 
     override fun onStart() {
         super.onStart()

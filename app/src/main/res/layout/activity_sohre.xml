@@ -13,92 +13,35 @@
         android:textSize="24dp"
         android:text="@string/sohre_machines"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_1"/>
+        >
+        <ListView
+            android:layout_width="200dp"
+            android:layout_height="480dp"
+            android:dividerHeight="1dp"
+            android:entries="machines" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_2"/>
+        <ListView
+            android:id="@+id/availability_w1"
+            android:layout_width="100dp"
+            android:layout_height="480dp"
+            android:text=""
+            android:layout_marginLeft="100dp"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_3"/>
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_4"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/washing_5"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_1"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="348dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_2"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_3"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="444dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_4"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
-        android:padding="12dp"
-        android:textSize="18dp"
-        android:text="@string/drying_5"/>
     <Button
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back_button"
         android:textSize="20dp"
-        android:layout_marginTop="540dp">
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="12dp">
     </Button>
 
 
