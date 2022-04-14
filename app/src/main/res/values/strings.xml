@@ -24,6 +24,8 @@
     <string name="drying_4">Drying Machine 4</string>
     <string name="drying_5">Drying Machine 5</string>
     <string name="back_button">Back</string>
+    <string name="open_button">OPEN</string>
+    <string name="use_button">IN USE</string>
 
 
 </resources>
