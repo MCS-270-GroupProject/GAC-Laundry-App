@@ -25,11 +25,11 @@
             android:textSize="18dp"
             android:text="@string/washing_1"/>
 
-        <EditText
+        <Button
             android:id="@+id/availability_w1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="@string/open_button"
             android:layout_marginLeft="100dp"
             />
     </LinearLayout>
