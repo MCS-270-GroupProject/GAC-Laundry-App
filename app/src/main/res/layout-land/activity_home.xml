@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:text="@string/welcome_message"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="72dp"
+        android:textSize="18dp"
+        android:text="@string/purpose_message"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="290dp"
+        android:textStyle="italic"
+        android:textSize="18dp"
+        android:text="@string/instruction_message"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/laundry_logo"
+        android:layout_marginLeft="180dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="90dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/sohreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/sohre_button"></Button>
+
+        <Button
+            android:id="@+id/pittmanButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/pittman_button"></Button>
+
+        <Button
+            android:id="@+id/noreliusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/norelius_button"></Button>
+    </LinearLayout>
+
+</FrameLayout>
+
