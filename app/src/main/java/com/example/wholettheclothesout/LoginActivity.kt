@@ -22,21 +22,21 @@ import java.net.URL
 import java.nio.charset.Charset
 
 
-private const val TAG = "MainActivity"
+private const val TAG = "LoginActivity"
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate(Bundle?) called")
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         loginButton = findViewById(R.id.loginButton)
 
 
         loginButton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
