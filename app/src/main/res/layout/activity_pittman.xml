@@ -13,215 +13,85 @@
         android:textSize="24dp"
         android:text="@string/pittman_machines"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/washing_1"/>
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:padding="12dp"
+    android:textSize="18dp"
+    android:text="@string/washing_1"/>
 
-        <EditText
-            android:id="@+id/availability_w1"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/washing_2"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/washing_2"/>
 
-        <EditText
-            android:id="@+id/availability_w2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/washing_3"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/washing_3"/>
 
-        <EditText
-            android:id="@+id/availability_w3"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="204dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/washing_4"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/washing_4"/>
 
-        <EditText
-            android:id="@+id/availability_w4"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/washing_5"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/washing_5"/>
 
-        <EditText
-            android:id="@+id/availability_w5"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/drying_1"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/drying_1"/>
 
-        <EditText
-            android:id="@+id/availability_d1"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="348dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/drying_2"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/drying_2"/>
 
-        <EditText
-            android:id="@+id/availability_d2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="396dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/drying_3"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/drying_3"/>
 
-        <EditText
-            android:id="@+id/availability_d3"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="444dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/drying_4"/>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/drying_4"/>
 
-        <EditText
-            android:id="@+id/availability_d4"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="492dp"
-        >
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="18dp"
-            android:text="@string/drying_5"/>
-
-        <EditText
-            android:id="@+id/availability_d5"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="100dp"
-            />
-    </LinearLayout>
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:text="@string/drying_5"/>
 
     <Button
         android:id="@+id/backButton"
@@ -229,8 +99,7 @@
         android:layout_height="wrap_content"
         android:text="@string/back_button"
         android:textSize="20dp"
-        android:layout_marginTop="540dp"
-        android:layout_marginLeft="12dp">
+        android:layout_marginTop="540dp">
     </Button>
 
 
