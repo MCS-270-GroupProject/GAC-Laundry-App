@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "961965701529",
+    "project_id": "wholettheclothesout-d3882",
+    "storage_bucket": "wholettheclothesout-d3882.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961965701529:android:4a16b2dc765b2b6d0abb08",
+        "android_client_info": {
+          "package_name": "com.example.wholettheclothesout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961965701529-lc5l01sh4cih8tdu280jol8k9mf6b4ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrufRjQl-izwA4yNpRJiVOLSOlQJ0qQQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961965701529-lc5l01sh4cih8tdu280jol8k9mf6b4ri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

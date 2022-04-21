@@ -8,12 +8,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.VolleyError
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
 import layout.UserModal
 import org.json.JSONException
 import org.json.JSONObject
@@ -28,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sohreButton: Button
     private lateinit var pittmanButton: Button
     private lateinit var noreliusButton: Button
-    private var requestQueue: RequestQueue? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         sohreButton = findViewById(R.id.sohreButton)
         pittmanButton = findViewById(R.id.pittmanButton)
         noreliusButton = findViewById(R.id.noreliusButton)
-        requestQueue = Volley.newRequestQueue(this)
 
 
         sohreButton.setOnClickListener {
@@ -56,7 +48,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        jsonParse()
     }
 
 //    private fun getDataFromAPI() {
@@ -97,24 +88,6 @@ class MainActivity : AppCompatActivity() {
 //        queue.add(jsonObjectRequest)
 //
 //    }
-    private fun jsonParse() {
-        val url = "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
-        val request = JsonObjectRequest(Request.Method.GET, url, null, Response.Listener {
-                response ->try {
-            val jsonArray = response.getJSONArray("employees")
-            for (i in 0 until jsonArray.length()) {
-                val employee = jsonArray.getJSONObject(i)
-                val machineName = employee.getString("MachineName")
-                val availability = employee.getInt("availability")
-                Log.d(TAG, "$i $machineName $availability")
-//                textView.append("$firstName, $age, $mail\n\n")
-            }
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-        }, Response.ErrorListener { error -> error.printStackTrace() })
-        requestQueue?.add(request)
-    }
 
 
     override fun onStart() {
