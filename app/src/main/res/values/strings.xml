@@ -10,6 +10,9 @@
 
     <string name="instruction_message">"Click on the building and choose your machine to get started!"</string>
 
+    <string name="unique_id">"This text will be replaced by unique ID info"</string>
+    <string name="login_button">LOGIN</string>
+
     <string name="norelius_machines">Norelius Machines</string>
     <string name="pittman_machines">Pittman Machines</string>
     <string name="sohre_machines">Sohre Machines</string>
