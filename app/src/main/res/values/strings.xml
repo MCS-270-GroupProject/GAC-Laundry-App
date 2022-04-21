@@ -10,6 +10,9 @@
 
     <string name="instruction_message">"Click on the building and choose your machine to get started!"</string>
 
+    <string name="unique_id">"This text will be replaced by unique ID info"</string>
+    <string name="login_button">LOGIN</string>
+
     <string name="norelius_machines">Norelius Machines</string>
     <string name="pittman_machines">Pittman Machines</string>
     <string name="sohre_machines">Sohre Machines</string>
@@ -24,6 +27,8 @@
     <string name="drying_4">Drying Machine 4</string>
     <string name="drying_5">Drying Machine 5</string>
     <string name="back_button">Back</string>
+    <string name="open_button">OPEN</string>
+    <string name="use_button">IN USE</string>
 
 
 </resources>
