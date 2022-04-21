@@ -22,4 +22,6 @@ class UserModal() {
     fun setAvailability(availability:String) {
         this.availability = availability
     }
+
+
 }

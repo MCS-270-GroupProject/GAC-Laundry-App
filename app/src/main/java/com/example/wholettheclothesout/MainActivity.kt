@@ -56,66 +56,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        jsonParse()
     }
-
-//    private fun getDataFromAPI() {
-//        val url = "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
-//
-//        val queue = Volley.newRequestQueue(this@MainActivity)
-//        Log.d(TAG, "API called")
-//
-//        val jsonObjectRequest =
-//            JsonObjectRequest(Request.Method.GET, url, null,  Response.Listener {
-////                fun onResponse(response: JSONObject) {
-////                    loadingPB.setVisibility(View.GONE)
-//                    response ->
-//                {
-//                    try {
-//                        val feedObj = response.getJSONObject("feed")
-//                        val entryArray = feedObj.getJSONArray("entry")
-//                        for (i in 0 until entryArray.length()) {
-//                            val entryObj = entryArray.getJSONObject(i)
-//                            val machineName =
-//                                entryObj.getJSONObject("gsx\$MachineName").getString("\$t")
-//                            val availability =
-//                                entryObj.getJSONObject("gsx\$Availability").getString("\$t")
-//                            Log.d(TAG, "$i $machineName $availability")
-//                        }
-//                    } catch (e: JSONException) {
-//                        e.printStackTrace()
-//                    }
-//                }
-//            }catch(e: JSON Exception) { // handline on error listener method.
-//                Toast.makeText(this@MainActivity, "Fail to get data..", Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-//        // calling a request queue method
-//        // and passing our json object
-//        // calling a request queue method
-//        // and passing our json object
-//        queue.add(jsonObjectRequest)
-//
-//    }
-    private fun jsonParse() {
-        val url = "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
-        val request = JsonObjectRequest(Request.Method.GET, url, null, Response.Listener {
-                response ->try {
-            val jsonArray = response.getJSONArray("employees")
-            for (i in 0 until jsonArray.length()) {
-                val employee = jsonArray.getJSONObject(i)
-                val machineName = employee.getString("MachineName")
-                val availability = employee.getInt("availability")
-                Log.d(TAG, "$i $machineName $availability")
-//                textView.append("$firstName, $age, $mail\n\n")
-            }
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-        }, Response.ErrorListener { error -> error.printStackTrace() })
-        requestQueue?.add(request)
-    }
-
 
     override fun onStart() {
         super.onStart()
