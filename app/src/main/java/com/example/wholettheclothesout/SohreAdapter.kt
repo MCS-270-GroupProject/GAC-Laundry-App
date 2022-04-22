@@ -1,12 +1,11 @@
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wholettheclothesout.R
-import layout.UserModal
+import com.example.wholettheclothesout.UserModal
 
 class SohreAdapter(private val mList: List<UserModal>) : RecyclerView.Adapter<SohreAdapter.ViewHolder>() {
 
@@ -27,7 +26,9 @@ class SohreAdapter(private val mList: List<UserModal>) : RecyclerView.Adapter<So
 
         // sets the text to the textview from our itemHolder class
         holder.machineName.text = itemsViewModel.getMachineName
-        holder.availability.setText(itemsViewModel.getAvailability)
+        holder.availability.text = itemsViewModel.getAvailability
+//        holder.countTime.setText(itemsViewModel.getCountTime)
+//        holder.gracePeriod.text = itemsViewModel.getGracePeriod
     }
 
     // return the number of the items in the list
@@ -38,6 +39,8 @@ class SohreAdapter(private val mList: List<UserModal>) : RecyclerView.Adapter<So
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val machineName: TextView = itemView.findViewById(R.id.machine_name)
-        val availability: EditText = itemView.findViewById(R.id.availability)
+        val availability: Button = itemView.findViewById(R.id.availability)
+//        val countTime: EditText = itemView.findViewById(R.id.countTime)
+//        val gracePeriod: TextView = itemView.findViewById(R.id.gracePeriod)
     }
 }
