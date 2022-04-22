@@ -17,6 +17,12 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.core.Context
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import layout.UserModal
 import org.json.JSONArray
 import org.json.JSONException
@@ -29,12 +35,12 @@ class SohreActivity : AppCompatActivity() {
     private var requestQueue: RequestQueue? = null
     private lateinit var machineName: String
     private lateinit var availability: String
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sohre)
         Log.d(TAG, "successful oncreate")
-
         requestQueue = Volley.newRequestQueue(this)
         backButton = findViewById(R.id.backButton)
 
@@ -46,13 +52,19 @@ class SohreActivity : AppCompatActivity() {
     }
 
     private fun requestJSON() {
-        val url = "https://opensheet.elk.sh/1rmxb77EULnkJ3DXygAB3rYzfSVhW5yXiMW0lOL1Dszk/Sheet1"
+        FirebaseApp.initializeApp(this)
+        database = FirebaseDatabase.getInstance().getReference("0").child("MachineName")
+        Log.d(TAG, "$database")
 
+        // Everything below is excel
+        val url = "https://opensheet.elk.sh/1rmxb77EULnkJ3DXygAB3rYzfSVhW5yXiMW0lOL1Dszk/Sheet1"
         val stringRequest = StringRequest(Request.Method.GET, url,
             { response ->
                 Log.d(TAG, ">> $response")
 
                 try {
+
+                    //Excel Data Extraction
                     val playersModelArrayList = ArrayList<UserModal>()
                     val dataArray = JSONArray(response)
 //                    Log.d(TAG, "$dataArray")
@@ -76,6 +88,7 @@ class SohreActivity : AppCompatActivity() {
                         Log.d(TAG, "${element.getAvailability}")
                         Log.d(TAG, "${element.getMachineName}")
                     }
+
 
                     // getting the recyclerview by its id
                     val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)

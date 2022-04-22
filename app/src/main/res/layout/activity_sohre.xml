@@ -14,7 +14,6 @@
         android:padding="12dp"
         android:textStyle="bold"
         android:textSize="24dp"
-        android:layout_gravity="center_horizontal"
         android:text="@string/sohre_machines"/>
 
     <androidx.recyclerview.widget.RecyclerView
