@@ -8,12 +8,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.VolleyError
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
 import layout.UserModal
 import org.json.JSONException
 import org.json.JSONObject
@@ -25,6 +19,10 @@ import java.nio.charset.Charset
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var sohreButton: Button
+    private lateinit var pittmanButton: Button
+    private lateinit var noreliusButton: Button
     private lateinit var loginButton: Button
 
 
