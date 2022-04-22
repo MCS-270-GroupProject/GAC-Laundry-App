@@ -13,43 +13,101 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.core.Context
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
-import layout.UserModal
 import org.json.JSONArray
 import org.json.JSONException
-import org.json.JSONObject
 
 private const val TAG = "SohreActivity"
 
 class SohreActivity : AppCompatActivity() {
-    private lateinit var backButton: Button
     private var requestQueue: RequestQueue? = null
     private lateinit var machineName: String
     private lateinit var availability: String
+
+    private lateinit var backButton: Button
+    private lateinit var useButton: Button
+    private lateinit var countTime: EditText
+    private lateinit var gracePeriod: TextView
+
     private lateinit var database: DatabaseReference
+
+    var grace = 30000
+    var string = ""
+    var counter = 0.toLong()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sohre)
         Log.d(TAG, "successful oncreate")
         requestQueue = Volley.newRequestQueue(this)
+
+//        countTime = findViewById(R.id.countTime)
         backButton = findViewById(R.id.backButton)
+//        gracePeriod = findViewById(R.id.gracePeriod)
 
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
         requestJSON()
+
+        title = "KotlinApp"
+
+//        useButton.setOnClickListener {
+//            useButton.setEnabled(false)
+//            useButton.setText("IN USE")
+//            countTime.isEnabled = false
+//            string = countTime.text.toString()
+//            startTimeCounter(string.toLong())
+//        }
+
+
     }
+
+//    private fun onListItemClick(position: Int) {
+//        Toast.makeText(this, mRepos[position].name, Toast.LENGTH_SHORT).show()
+//    }
+
+//    fun done(){
+//        useButton.setEnabled(true)
+//        useButton.setText("OPEN")
+//        countTime.isEnabled = true
+//        counter = 60000
+//    }
+
+//    fun startGraceCounter() {
+//        object : CountDownTimer(30000, 1000) {
+//            override fun onTick(millisUntilFinished: Long) {
+//                gracePeriod.text = (grace/1000).toString()
+//                grace-=1000
+//            }
+//            override fun onFinish() {
+//                gracePeriod.text = ""
+//                countTime.setText("")
+//                done()
+//            }
+//        }.start()
+//    }
+
+//    fun startTimeCounter(time: Long) {
+//        counter = time*1000
+//        object : CountDownTimer(time*1000, 1000) {
+//            override fun onTick(millisUntilFinished: Long) {
+//                countTime.setText((counter/1000).toString())
+//                counter-=1000
+//            }
+//            override fun onFinish() {
+//                countTime.setText("Done")
+//                startGraceCounter()
+//            }
+//        }.start()
+//    }
+
 
     private fun requestJSON() {
         FirebaseApp.initializeApp(this)
