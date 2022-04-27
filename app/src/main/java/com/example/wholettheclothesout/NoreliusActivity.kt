@@ -35,4 +35,7 @@ class NoreliusActivity : AppCompatActivity() {
 //        val reference : DatabaseReference = FirebaseDatabase.getInstance().getReference().child("MachineName");
 
     }
+
+
+
 }
