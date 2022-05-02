@@ -1,177 +1,175 @@
-//package com.example.wholettheclothesout
-//
-//import SohreAdapter
-//import android.content.Intent
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.util.Log
-//import android.widget.Button
-//import android.widget.EditText
-//import android.widget.TextView
-//import android.widget.Toast
-//import androidx.recyclerview.widget.LinearLayoutManager
-//import androidx.recyclerview.widget.RecyclerView
-//import com.android.volley.Request
-//import com.android.volley.RequestQueue
-//import com.android.volley.toolbox.StringRequest
-//import com.android.volley.toolbox.Volley
-//import com.google.firebase.FirebaseApp
-//import com.google.firebase.database.DatabaseReference
-//import com.google.firebase.database.FirebaseDatabase
-//import org.json.JSONArray
-//import org.json.JSONException
-//
-//private const val TAG = "PittmanActivity"
-//
-//class PittmanActivity : AppCompatActivity() {
-//    private var requestQueue: RequestQueue? = null
-//    private lateinit var machineName: String
-//    private lateinit var availability: String
-//
-//    private lateinit var backButton: Button
-//    private lateinit var useButton: Button
-//    private lateinit var countTime: EditText
-//    private lateinit var gracePeriod: TextView
-//
-//    private lateinit var database: DatabaseReference
-//
-//    var grace = 30000
-//    var string = ""
-//    var counter = 0.toLong()
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_pittman)
-//        Log.d(TAG, "successful oncreate")
-//        requestQueue = Volley.newRequestQueue(this)
-//
-////        countTime = findViewById(R.id.countTime)
-//        backButton = findViewById(R.id.backButton)
-////        gracePeriod = findViewById(R.id.gracePeriod)
-//
-//        backButton.setOnClickListener {
-//            val intent = Intent(this, HomeActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        requestJSON()
-//
-//        title = "KotlinApp"
-//
-////        useButton.setOnClickListener {
-////            useButton.setEnabled(false)
-////            useButton.setText("IN USE")
-////            countTime.isEnabled = false
-////            string = countTime.text.toString()
-////            startTimeCounter(string.toLong())
-////        }
-//
-//
-//    }
-//
-////    private fun onListItemClick(position: Int) {
-////        Toast.makeText(this, mRepos[position].name, Toast.LENGTH_SHORT).show()
-////    }
-//
-////    fun done(){
-////        useButton.setEnabled(true)
-////        useButton.setText("OPEN")
-////        countTime.isEnabled = true
-////        counter = 60000
-////    }
-//
-////    fun startGraceCounter() {
-////        object : CountDownTimer(30000, 1000) {
-////            override fun onTick(millisUntilFinished: Long) {
-////                gracePeriod.text = (grace/1000).toString()
-////                grace-=1000
-////            }
-////            override fun onFinish() {
-////                gracePeriod.text = ""
-////                countTime.setText("")
-////                done()
-////            }
-////        }.start()
-////    }
-//
-////    fun startTimeCounter(time: Long) {
-////        counter = time*1000
-////        object : CountDownTimer(time*1000, 1000) {
-////            override fun onTick(millisUntilFinished: Long) {
-////                countTime.setText((counter/1000).toString())
-////                counter-=1000
-////            }
-////            override fun onFinish() {
-////                countTime.setText("Done")
-////                startGraceCounter()
-////            }
-////        }.start()
-////    }
-//
-//
-//    private fun requestJSON() {
-//        FirebaseApp.initializeApp(this)
-//        database = FirebaseDatabase.getInstance().getReference("0").child("MachineName")
-//        Log.d(TAG, "$database")
-//
-//        // Everything below is excel
-//        val url = "https://opensheet.elk.sh/1rmxb77EULnkJ3DXygAB3rYzfSVhW5yXiMW0lOL1Dszk/Sheet1"
-//        val stringRequest = StringRequest(Request.Method.GET, url,
-//            { response ->
-//                Log.d(TAG, ">> $response")
-//
-//                try {
-//
-//                    //Excel Data Extraction
-//                    val playersModelArrayList = ArrayList<UserModal>()
-//                    val dataArray = JSONArray(response)
-////                    Log.d(TAG, "$dataArray")
-//
-//                    for (i in 0 until dataArray.length()) {
-//                        Log.d(TAG, "$i")
-//                        val playerModel = UserModal()
-//                        val dataobj = dataArray.getJSONObject(i)
-////                        Log.d(TAG, "$dataobj")
-//                        machineName = dataobj.getString("MachineName")
-//                        availability = dataobj.getString("Availability")
-//
-//                        playerModel.setMachineName(machineName)
-//                        playerModel.setAvailability(availability)
-//                        playersModelArrayList.add(playerModel)
-////                        Log.d(TAG, "${playerModel.getMachineName}")
-//
-//                    }
-//
-//                    for (element in playersModelArrayList) {
-//                        Log.d(TAG, "${element.getAvailability}")
-//                        Log.d(TAG, "${element.getMachineName}")
-//                    }
-//
-//
-//                    // getting the recyclerview by its id
-//                    val recyclerview = findViewById<RecyclerView>(R.id.pittmanrecyclerview)
-//
-//                    // this creates a vertical layout Manager
-//                    recyclerview.layoutManager = LinearLayoutManager(this)
-//
-//                    // This will pass the ArrayList to our Adapter
-//                    val adapter = SohreAdapter(playersModelArrayList, this)
-//
-//                    // Setting the Adapter with the recyclerview
-//                    recyclerview.adapter = adapter
-//
-//                } catch (e: JSONException) {
-//                    Log.d(TAG, "Failed")
-//
-//                    e.printStackTrace()
-//                }
-//            },
-//            { error ->
-//                //displaying the error in toast if occurrs
-//                Toast.makeText(applicationContext, error.message, Toast.LENGTH_SHORT).show()
-//            })
-//        // request queue
-//        val requestQueue = Volley.newRequestQueue(this)
-//        requestQueue.add(stringRequest)
-//    }
-//}
+package com.example.wholettheclothesout
+
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.content.IntentSender
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.CountDownTimer
+import android.util.Log
+import android.widget.Button
+import android.widget.TextView
+import com.example.wholettheclothesout.util.PrefUtil
+import java.util.*
+private const val TAG = "PittmanActivity"
+
+class PittmanActivity : AppCompatActivity() {
+
+    companion object{
+        fun setAlarm(context: Context, nowSeconds: Long, secondsRemaining: Long): Long{
+            val wakeUpTime = (nowSeconds + secondsRemaining) * 1000
+            val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            val intent = Intent(context, TimerExpiredReceiver::class.java)
+            val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, wakeUpTime,pendingIntent)
+            PrefUtil.setAlarmSetTime(nowSeconds, context)
+            return wakeUpTime
+        }
+
+        fun removeAlarm(context: Context){
+            val intent = Intent(context, TimerExpiredReceiver::class.java)
+            val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
+            val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            alarmManager.cancel(pendingIntent)
+            PrefUtil.setAlarmSetTime(0, context)
+        }
+
+        val nowSeconds: Long
+            get() = Calendar.getInstance().timeInMillis / 1000
+    }
+
+    enum class TimerState{
+        Stopped, Running
+    }
+
+    private lateinit var backButton: Button
+    private lateinit var timer: CountDownTimer
+    private var timerLength = 30L
+    private var timeRemaining = 0L
+    private lateinit var startButton: Button
+    private var timerState = TimerState.Stopped
+    private lateinit var timertest: TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_pittman)
+        timertest = findViewById(R.id.timertest)
+        timertest.text = ""
+        startButton = findViewById(R.id.startButton)
+        backButton = findViewById(R.id.backButton)
+
+        backButton.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        startButton.setOnClickListener{
+            startTimer()
+            updateButtons()
+            timerState = TimerState.Running
+
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "OnResume")
+
+        initTimer()
+
+        removeAlarm(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if(timerState == TimerState.Running){
+            timer.cancel()
+            val wakeUpTime = setAlarm(this, nowSeconds, timeRemaining)
+        }
+
+        PrefUtil.setPreviousTimeLengthSeconds(timerLength, this)
+        PrefUtil.setSecondsRemaining(timeRemaining, this)
+        PrefUtil.setTimerState(timerState, this)
+    }
+
+    private fun initTimer(){
+        timerState = PrefUtil.getTimerState(this)
+
+        if(timerState == TimerState.Stopped)
+            setNewTimerLength()
+        else
+            setPreviousTimerLength()
+
+        timeRemaining = if (timerState == TimerState.Running)
+            PrefUtil.getSecondsRemaining(this)
+        else
+            timerLength
+
+        val alarmSetTime = PrefUtil.getAlarmSetTime(this)
+        if (alarmSetTime > 0)
+            timeRemaining -= nowSeconds - alarmSetTime
+
+        if (timeRemaining <= 0)
+            onTimerFinished()
+        else if(timerState == TimerState.Running)
+            startTimer()
+
+        updateCountDownUI()
+        updateButtons()
+    }
+
+    private fun onTimerFinished(){
+        timerState = TimerState.Stopped
+        setNewTimerLength()
+        PrefUtil.setSecondsRemaining(timerLength,this)
+        timeRemaining = timerLength
+        updateCountDownUI()
+        updateButtons()
+    }
+
+    private fun startTimer(){
+        timerState = TimerState.Running
+
+        timer = object : CountDownTimer(timeRemaining*1000,1000) {
+            override fun onFinish() = onTimerFinished()
+
+            override fun onTick(millisUntilFinished: Long) {
+                timeRemaining = millisUntilFinished / 1000
+                updateCountDownUI()
+            }
+        }.start()
+    }
+
+    private fun setNewTimerLength(){
+        timerLength = 30L
+    }
+
+    private fun setPreviousTimerLength(){
+        timerLength = PrefUtil.getPreviousTimerLengthSeconds(this)
+    }
+
+    private fun updateCountDownUI(){
+        val secondsUntilFinished = timeRemaining
+        val timeStr = secondsUntilFinished.toString()
+        timertest.text = timeStr
+    }
+
+    private fun updateButtons(){
+        when(timerState){
+            TimerState.Running ->{
+                startButton.setEnabled(false)
+                startButton.text = "In-Use"
+            }
+            TimerState.Stopped ->{
+                startButton.setEnabled(true)
+                startButton.text = "Open"
+                timertest.text = ""
+            }
+        }
+
+    }
+
+
+    }
