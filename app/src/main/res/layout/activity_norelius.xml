@@ -4,23 +4,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/listView"
+        android:layout_gravity="center_horizontal"
+        android:padding="12dp"
+        android:textStyle="bold"
+        android:textSize="24dp"
         android:text="@string/norelius_machines"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:text="@string/washing_1"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Open"
+            android:id="@+id/startButton2"/>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:gravity="center_horizontal"
+            android:id="@+id/timertest2" />
+
+    </LinearLayout>
 
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/backButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back_button"
         android:textSize="20dp"
-        android:layout_marginTop="540dp"
-        android:layout_marginLeft="12dp">
+        android:layout_marginTop="540dp">
     </Button>
 
 
