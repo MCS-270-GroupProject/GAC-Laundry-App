@@ -50,6 +50,7 @@ class SohreAdapter(
         View.OnClickListener {
         val machineName: TextView = itemView.findViewById(R.id.machine_name)
         val availability: Button = itemView.findViewById(R.id.availability)
+        val timer: TextView = itemView.findViewById(R.id.countTime)
 
         //        val countTime: EditText = itemView.findViewById(R.id.countTime)
 //        val gracePeriod: TextView = itemView.findViewById(R.id.gracePeriod)
@@ -62,8 +63,10 @@ class SohreAdapter(
 
         init{
             itemView.setOnClickListener(this)
+
             availability.setOnClickListener {
                 Log.d(TAG, "${availability.text}")
+
 
                 fun setInUse(status: String){
                     database = Firebase.database.reference
@@ -74,6 +77,7 @@ class SohreAdapter(
 
                 if (available == "Open"){
                     availability.text = "In-Use"
+                    //availability.isEnabled = false
                     setInUse("In-Use")
                 }else{
                     availability.text = "Open"
