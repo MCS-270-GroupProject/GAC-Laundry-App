@@ -23,7 +23,7 @@ import org.json.JSONException
 
 private const val TAG = "SohreActivity"
 
-class SohreActivity : AppCompatActivity() {
+class SohreActivity : AppCompatActivity(), SohreAdapter.OnItemClickListener {
     private var requestQueue: RequestQueue? = null
     private lateinit var machineName: String
     private lateinit var availability: String
@@ -34,6 +34,9 @@ class SohreActivity : AppCompatActivity() {
     private lateinit var gracePeriod: TextView
 
     private lateinit var database: DatabaseReference
+
+    private val playersModelArrayList = ArrayList<UserModal>()
+
 
     var grace = 30000
     var string = ""
@@ -50,7 +53,7 @@ class SohreActivity : AppCompatActivity() {
 //        gracePeriod = findViewById(R.id.gracePeriod)
 
         backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
 
@@ -123,7 +126,6 @@ class SohreActivity : AppCompatActivity() {
                 try {
 
                     //Excel Data Extraction
-                    val playersModelArrayList = ArrayList<UserModal>()
                     val dataArray = JSONArray(response)
 //                    Log.d(TAG, "$dataArray")
 
@@ -155,14 +157,13 @@ class SohreActivity : AppCompatActivity() {
                     recyclerview.layoutManager = LinearLayoutManager(this)
 
                     // This will pass the ArrayList to our Adapter
-                    val adapter = SohreAdapter(playersModelArrayList)
+                    val adapter = SohreAdapter(playersModelArrayList, this)
 
                     // Setting the Adapter with the recyclerview
                     recyclerview.adapter = adapter
 
                 } catch (e: JSONException) {
                     Log.d(TAG, "Failed")
-
                     e.printStackTrace()
                 }
             },
@@ -174,4 +175,11 @@ class SohreActivity : AppCompatActivity() {
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(stringRequest)
     }
+
+    override fun onItemClick(position: Int) {
+        Log.d(TAG, "Item $position")
+        val clickedItem: UserModal = playersModelArrayList[position]
+        Log.d(TAG, "${clickedItem.getMachineName}")
+    }
+
 }
