@@ -3,25 +3,16 @@ package com.example.wholettheclothesout
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import layout.UserModal
-import org.json.JSONException
-import org.json.JSONObject
-import java.io.IOException
-import java.net.URL
-import java.nio.charset.Charset
 
 
 private const val TAG = "MainActivity"

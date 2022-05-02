@@ -36,12 +36,12 @@ class HomeActivity : AppCompatActivity() {
         }
 
         pittmanButton.setOnClickListener {
-//            val intent = Intent(this, PittmanActivity::class.java)
+            val intent = Intent(this, PittmanActivity::class.java)
             startActivity(intent)
         }
 
         noreliusButton.setOnClickListener {
-//            val intent = Intent(this, NoreliusActivity::class.java)
+            val intent = Intent(this, NoreliusActivity::class.java)
             startActivity(intent)
         }
 

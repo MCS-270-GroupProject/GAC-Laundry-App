@@ -1,3 +1,4 @@
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,10 +7,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wholettheclothesout.R
 import com.example.wholettheclothesout.UserModal
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+
+private const val TAG = "SohreAdapter"
 
 class SohreAdapter(
     private val mList: List<UserModal>,
     private val listener: OnItemClickListener) : RecyclerView.Adapter<SohreAdapter.ViewHolder>() {
+    private lateinit var database: DatabaseReference
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -55,7 +62,26 @@ class SohreAdapter(
 
         init{
             itemView.setOnClickListener(this)
+            availability.setOnClickListener {
+                Log.d(TAG, "${availability.text}")
+
+                fun setInUse(status: String){
+                    database = Firebase.database.reference
+                    database.child("Dorms").child("Sohre").child("Washing machine 1").child("Availability").setValue(status)
+                }
+
+                val available = availability.text
+
+                if (available == "Open"){
+                    availability.text = "In-Use"
+                    setInUse("In-Use")
+                }else{
+                    availability.text = "Open"
+                    setInUse("Open")
+                }
+            }
         }
+
     }
 
     interface OnItemClickListener {
