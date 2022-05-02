@@ -13,15 +13,16 @@
         android:textSize="24dp"
         android:text="@string/welcome_message"
         android:textColor="@color/black"/>
-
-    <Button
-        android:id="@+id/loginButton"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="400dp"
-        android:text="@string/login_button">
-    </Button>
+        android:layout_marginTop="44dp"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:text="@string/signup_message"
+        android:textColor="@color/black"/>
+
     <Button
         android:id="@+id/signupButton"
         android:layout_width="wrap_content"
