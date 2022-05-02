@@ -36,7 +36,7 @@ class SohreAdapter(
         // sets the text to the textview from our itemHolder class
         holder.machineName.text = itemsViewModel.getMachineName
         holder.availability.text = itemsViewModel.getAvailability
-//        holder.countTime.setText(itemsViewModel.getCountTime)
+        holder.timer.text = itemsViewModel.getCountTime
 //        holder.gracePeriod.text = itemsViewModel.getGracePeriod
     }
 
@@ -68,9 +68,9 @@ class SohreAdapter(
                 Log.d(TAG, "${availability.text}")
 
 
-                fun setInUse(status: String){
+                fun setInUse(machine: String, status: String){
                     database = Firebase.database.reference
-                    database.child("Dorms").child("Sohre").child("Washing machine 1").child("Availability").setValue(status)
+                    database.child("Dorms").child("Sohre").child(machine).child("Availability").setValue(status)
                 }
 
                 val available = availability.text
@@ -78,10 +78,10 @@ class SohreAdapter(
                 if (available == "Open"){
                     availability.text = "In-Use"
                     //availability.isEnabled = false
-                    setInUse("In-Use")
+                    setInUse(machineName.text as String,"In-Use")
                 }else{
                     availability.text = "Open"
-                    setInUse("Open")
+                    setInUse(machineName.text as String, "Open")
                 }
             }
         }
