@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wholettheclothesout.R
 import com.example.wholettheclothesout.UserModal
 
-class SohreAdapter(private val mList: List<UserModal>) : RecyclerView.Adapter<SohreAdapter.ViewHolder>() {
+class SohreAdapter(
+    private val mList: List<UserModal>,
+    private val listener: OnItemClickListener) : RecyclerView.Adapter<SohreAdapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,10 +39,29 @@ class SohreAdapter(private val mList: List<UserModal>) : RecyclerView.Adapter<So
     }
 
     // Holds the views for adding it to image and text
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         val machineName: TextView = itemView.findViewById(R.id.machine_name)
         val availability: Button = itemView.findViewById(R.id.availability)
-//        val countTime: EditText = itemView.findViewById(R.id.countTime)
+
+        //        val countTime: EditText = itemView.findViewById(R.id.countTime)
 //        val gracePeriod: TextView = itemView.findViewById(R.id.gracePeriod)
+        override fun onClick(p0: View?) {
+            val position: Int = adapterPosition
+            if (position!= RecyclerView.NO_POSITION){
+                listener.onItemClick(position)
+            }
+        }
+
+        init{
+            itemView.setOnClickListener(this)
+        }
     }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int) {
+
+        }
+    }
+
 }
