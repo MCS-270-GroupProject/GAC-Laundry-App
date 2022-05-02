@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-//            writeNewUser("02","louis", "lyu@gac.edu")
+            //writeNewUser("02","louis", "lyu@gac.edu")
             startActivity(intent)
         }
     }
@@ -77,6 +77,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
 //    fun writeNewUser(userId: String, name: String, email: String) {
+//        val user = User(name, email)
 //        database.child("users").child(userId).setValue(user)
 //    }
 
