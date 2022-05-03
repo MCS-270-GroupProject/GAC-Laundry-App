@@ -1,5 +1,6 @@
 package com.example.wholettheclothesout
 
+import NoreliusAdapter
 import SohreAdapter
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -9,7 +10,6 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -171,6 +171,7 @@ class SohreActivity : AppCompatActivity(), SohreAdapter.OnItemClickListener {
 
                         playerModel.setAvailability(detailVal.toString())
                         playerModel.setMachineName(machine)
+                        playerModel.setCountTime(machineVal["Timer"].toString())
                         playersModelArrayList.add(playerModel)
                     }
                     setView(playersModelArrayList)

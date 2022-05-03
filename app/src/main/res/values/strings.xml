@@ -29,6 +29,8 @@
     <string name="back_button">Back</string>
     <string name="open_button">OPEN</string>
     <string name="use_button">IN USE</string>
+    <string name="signup_button">Sign up</string>
+    <string name="signup_message">Sign up!</string>
 
 
 </resources>

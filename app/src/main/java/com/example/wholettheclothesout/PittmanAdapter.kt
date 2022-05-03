@@ -13,11 +13,11 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-private const val TAG = "SohreAdapter"
+private const val TAG = "PittmanAdapter"
 
-class SohreAdapter(
+class PittmanAdapter(
     private val mList: List<UserModal>,
-    private val listener: OnItemClickListener) : RecyclerView.Adapter<SohreAdapter.ViewHolder>() {
+    private val listener: OnItemClickListener) : RecyclerView.Adapter<PittmanAdapter.ViewHolder>() {
     private lateinit var database: DatabaseReference
 
     // create new views
@@ -40,6 +40,7 @@ class SohreAdapter(
         holder.availability.text = itemsViewModel.getAvailability
         holder.countTimer.setText(itemsViewModel.getCountTime)
         holder.availability.isEnabled = holder.availability.text=="Open"
+
 //        holder.gracePeriod.text = itemsViewModel.getGracePeriod
     }
 
@@ -54,7 +55,6 @@ class SohreAdapter(
         val machineName: TextView = itemView.findViewById(R.id.machine_name)
         val availability: Button = itemView.findViewById(R.id.availability)
         val countTimer: EditText = itemView.findViewById(R.id.countTime)
-
 
         //        val countTime: EditText = itemView.findViewById(R.id.countTime)
 //        val gracePeriod: TextView = itemView.findViewById(R.id.gracePeriod)
@@ -74,8 +74,9 @@ class SohreAdapter(
 
                 fun setInUse(machine: String, status: String, time:String = "0"){
                     database = Firebase.database.reference
-                    database.child("Dorms").child("Sohre").child(machine).child("Availability").setValue(status)
-                    database.child("Dorms").child("Sohre").child(machine).child("Timer").setValue(time)
+                    database.child("Dorms").child("Pittman").child(machine).child("Availability").setValue(status)
+                    database.child("Dorms").child("Pittman").child(machine).child("Timer").setValue(time)
+
                 }
 
                 val available = availability.text
@@ -98,6 +99,7 @@ class SohreAdapter(
                             setInUse(machineName.text as String, "In-Use", "!!!")
                             availability.text = "Open"
                             availability.isEnabled = true
+
                             setInUse(machineName.text as String, "Open")
                         }
                     }
