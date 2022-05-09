@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     //private lateinit var string: String
     //private lateinit var textView: TextView
     private lateinit var loginButton: Button
+    private lateinit var signupButton: Button
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
 
@@ -36,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
         loginButton = findViewById(R.id.loginButton)
+        signupButton = findViewById(R.id.signupButton)
+
 //        emailAddress = findViewById(R.id.emailAddress).text.toString()
 //        password = findViewById(R.id.password).text.toString()
         database = Firebase.database.reference
@@ -47,12 +50,12 @@ class MainActivity : AppCompatActivity() {
             signIn("bhailu@gustavus.edu", "1234bam")
             startActivity(intent)
         }
-//        signupButton.setOnClickListener {
-//            val intent = Intent(this, SignupActivity::class.java)
-//            createAccount("bhailu@gustavus.edu", "1234bam")
-//            signIn("bhailu@gustavus.edu", "1234bam")
-//            startActivity(intent)
-//        }
+        signupButton.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            createAccount("bhailu@gustavus.edu", "1234bam")
+            signIn("bhailu@gustavus.edu", "1234bam")
+            startActivity(intent)
+        }
     }
 
     public override fun onStart() {

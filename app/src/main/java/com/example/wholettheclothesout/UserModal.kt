@@ -12,6 +12,8 @@ class UserModal() {
         this.countTime = countTime
         this.gracePeriod = gracePeriod
     }
+    override fun toString(): String {
+        return "$machineName"    }
 
     val getMachineName: String
         get() = machineName
