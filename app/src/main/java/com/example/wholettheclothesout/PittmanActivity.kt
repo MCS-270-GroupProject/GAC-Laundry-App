@@ -1,6 +1,5 @@
 package com.example.wholettheclothesout
 
-import NoreliusAdapter
 import PittmanAdapter
 import android.app.AlarmManager
 import android.app.PendingIntent

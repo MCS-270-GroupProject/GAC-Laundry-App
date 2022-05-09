@@ -1,6 +1,5 @@
 package com.example.wholettheclothesout
 
-import NoreliusAdapter
 import SohreAdapter
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -174,7 +173,7 @@ class SohreActivity : AppCompatActivity(), SohreAdapter.OnItemClickListener {
                         playerModel.setCountTime(machineVal["Timer"].toString())
                         playersModelArrayList.add(playerModel)
                     }
-//                    setView(playersModelArrayList.sortedWith(compareBy({ it. })))
+                    setView(playersModelArrayList)
                 }
             }
 
@@ -298,81 +297,81 @@ class SohreActivity : AppCompatActivity(), SohreAdapter.OnItemClickListener {
         PrefUtil3.setTimerState(timerState, this)
     }*/
 
-    private fun initTimer(){
-        timerState = PrefUtil3.getTimerState(this)
-
-        if(timerState == SohreActivity.TimerState.Stopped)
-            setNewTimerLength()
-        else
-            setPreviousTimerLength()
-
-        timeRemaining = if (timerState == SohreActivity.TimerState.Running)
-            PrefUtil3.getSecondsRemaining(this)
-        else
-            timerLength
-
-        val alarmSetTime = PrefUtil3.getAlarmSetTime(this)
-        if (alarmSetTime > 0)
-            timeRemaining -= SohreActivity.nowSeconds - alarmSetTime
-
-        if (timeRemaining <= 0)
-            onTimerFinished()
-        else if(timerState == SohreActivity.TimerState.Running)
-            startTimer()
-
-        updateCountDownUI()
-        //updateButtons()
-    }
-
-    private fun onTimerFinished(){
-        timerState = SohreActivity.TimerState.Stopped
-        setNewTimerLength()
-        PrefUtil3.setSecondsRemaining(timerLength,this)
-        timeRemaining = timerLength
-        updateCountDownUI()
-        //updateButtons()
-    }
-
-    private fun startTimer(){
-        timerState = SohreActivity.TimerState.Running
-
-        timer = object : CountDownTimer(timeRemaining*1000,1000) {
-            override fun onFinish() = onTimerFinished()
-
-            override fun onTick(millisUntilFinished: Long) {
-                timeRemaining = millisUntilFinished / 1000
-                updateCountDownUI()
-            }
-        }.start()
-    }
-
-    private fun setNewTimerLength(){
-        timerLength = 30L
-    }
-
-    private fun setPreviousTimerLength(){
-        timerLength = PrefUtil3.getPreviousTimerLengthSeconds(this)
-    }
-
-    private fun updateCountDownUI(){
-        val secondsUntilFinished = timeRemaining
-        val timeStr = secondsUntilFinished.toString()
-        //timertest.text = timeStr, set text view to display timer
-    }
-
-    /*private fun updateButtons(){
-        when(timerState){
-            SohreActivity.TimerState.Running ->{
-                startButton.setEnabled(false)
-                startButton.text = "In-Use"
-            }
-            SohreActivity.TimerState.Stopped ->{
-                startButton.setEnabled(true)
-                startButton.text = "Open"
-                timertest.text = ""
-            }
-        }
-
-    }*/
+//    private fun initTimer(){
+//        timerState = PrefUtil3.getTimerState(this)
+//
+//        if(timerState == SohreActivity.TimerState.Stopped)
+//            setNewTimerLength()
+//        else
+//            setPreviousTimerLength()
+//
+//        timeRemaining = if (timerState == SohreActivity.TimerState.Running)
+//            PrefUtil3.getSecondsRemaining(this)
+//        else
+//            timerLength
+//
+//        val alarmSetTime = PrefUtil3.getAlarmSetTime(this)
+//        if (alarmSetTime > 0)
+//            timeRemaining -= SohreActivity.nowSeconds - alarmSetTime
+//
+//        if (timeRemaining <= 0)
+//            onTimerFinished()
+//        else if(timerState == SohreActivity.TimerState.Running)
+//            startTimer()
+//
+//        updateCountDownUI()
+//        //updateButtons()
+//    }
+//
+//    private fun onTimerFinished(){
+//        timerState = SohreActivity.TimerState.Stopped
+//        setNewTimerLength()
+//        PrefUtil3.setSecondsRemaining(timerLength,this)
+//        timeRemaining = timerLength
+//        updateCountDownUI()
+//        //updateButtons()
+//    }
+//
+//    private fun startTimer(){
+//        timerState = SohreActivity.TimerState.Running
+//
+//        timer = object : CountDownTimer(timeRemaining*1000,1000) {
+//            override fun onFinish() = onTimerFinished()
+//
+//            override fun onTick(millisUntilFinished: Long) {
+//                timeRemaining = millisUntilFinished / 1000
+//                updateCountDownUI()
+//            }
+//        }.start()
+//    }
+//
+//    private fun setNewTimerLength(){
+//        timerLength = 30L
+//    }
+//
+//    private fun setPreviousTimerLength(){
+//        timerLength = PrefUtil3.getPreviousTimerLengthSeconds(this)
+//    }
+//
+//    private fun updateCountDownUI(){
+//        val secondsUntilFinished = timeRemaining
+//        val timeStr = secondsUntilFinished.toString()
+//        //timertest.text = timeStr, set text view to display timer
+//    }
+//
+//    /*private fun updateButtons(){
+//        when(timerState){
+//            SohreActivity.TimerState.Running ->{
+//                startButton.setEnabled(false)
+//                startButton.text = "In-Use"
+//            }
+//            SohreActivity.TimerState.Stopped ->{
+//                startButton.setEnabled(true)
+//                startButton.text = "Open"
+//                timertest.text = ""
+//            }
+//        }
+//
+//    }*/
 
 }
