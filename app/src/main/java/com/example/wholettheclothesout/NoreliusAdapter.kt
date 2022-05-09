@@ -13,11 +13,11 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-private const val TAG = "SohreAdapter"
+private const val TAG = "NoreliusAdapter"
 
-class SohreAdapter(
+class NoreliusAdapter(
     private val mList: List<UserModal>,
-    private val listener: OnItemClickListener) : RecyclerView.Adapter<SohreAdapter.ViewHolder>() {
+    private val listener: OnItemClickListener) : RecyclerView.Adapter<NoreliusAdapter.ViewHolder>() {
     private lateinit var database: DatabaseReference
 
     // create new views
@@ -40,6 +40,7 @@ class SohreAdapter(
         holder.availability.text = itemsViewModel.getAvailability
         holder.countTimer.setText(itemsViewModel.getCountTime)
         holder.availability.isEnabled = holder.availability.text=="Start"
+
 //        holder.gracePeriod.text = itemsViewModel.getGracePeriod
     }
 
@@ -54,7 +55,6 @@ class SohreAdapter(
         val machineName: TextView = itemView.findViewById(R.id.machine_name)
         val availability: Button = itemView.findViewById(R.id.availability)
         val countTimer: EditText = itemView.findViewById(R.id.countTime)
-
 
         //        val countTime: EditText = itemView.findViewById(R.id.countTime)
 //        val gracePeriod: TextView = itemView.findViewById(R.id.gracePeriod)
@@ -71,10 +71,12 @@ class SohreAdapter(
             availability.setOnClickListener {
                 Log.d(TAG, "${availability.text}")
 
+
                 fun setInUse(machine: String, status: String, time:String = "0"){
                     database = Firebase.database.reference
-                    database.child("Dorms").child("Sohre").child(machine).child("Availability").setValue(status)
-                    database.child("Dorms").child("Sohre").child(machine).child("Timer").setValue(time)
+                    database.child("Dorms").child("Norelius").child(machine).child("Availability").setValue(status)
+                    database.child("Dorms").child("Norelius").child(machine).child("Timer").setValue(time)
+
                 }
 
                 val available = availability.text
@@ -82,8 +84,7 @@ class SohreAdapter(
                 if (available == "Start"){
                     availability.text = "In-Use"
                     availability.isEnabled = false
-                    val time = countTimer.text.toString()
-                    setInUse(machineName.text as String,"In-Use", time)
+                    setInUse(machineName.text as String,"In-Use")
                     val timer = object: CountDownTimer(20000, 1000) {
                         override fun onTick(millisUntilFinished: Long) {
                             Log.d(TAG, "seconds remaining: " + millisUntilFinished / 1000)
