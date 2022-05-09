@@ -39,7 +39,7 @@ class SohreAdapter(
         holder.machineName.text = itemsViewModel.getMachineName
         holder.availability.text = itemsViewModel.getAvailability
         holder.countTimer.setText(itemsViewModel.getCountTime)
-        holder.availability.isEnabled = holder.availability.text=="Open"
+        holder.availability.isEnabled = holder.availability.text=="Start"
 //        holder.gracePeriod.text = itemsViewModel.getGracePeriod
     }
 
@@ -71,7 +71,6 @@ class SohreAdapter(
             availability.setOnClickListener {
                 Log.d(TAG, "${availability.text}")
 
-
                 fun setInUse(machine: String, status: String, time:String = "0"){
                     database = Firebase.database.reference
                     database.child("Dorms").child("Sohre").child(machine).child("Availability").setValue(status)
@@ -80,10 +79,11 @@ class SohreAdapter(
 
                 val available = availability.text
 
-                if (available == "Open"){
+                if (available == "Start"){
                     availability.text = "In-Use"
                     availability.isEnabled = false
-                    setInUse(machineName.text as String,"In-Use")
+                    val time = countTimer.text.toString()
+                    setInUse(machineName.text as String,"In-Use", time)
                     val timer = object: CountDownTimer(20000, 1000) {
                         override fun onTick(millisUntilFinished: Long) {
                             Log.d(TAG, "seconds remaining: " + millisUntilFinished / 1000)
@@ -94,17 +94,15 @@ class SohreAdapter(
 
                         override fun onFinish() {
                             Log.d(TAG, "Time's finished!")
-                            countTimer.setText("!!!")
-                            setInUse(machineName.text as String, "In-Use", "!!!")
-                            availability.text = "Open"
+                            availability.text = "Start"
                             availability.isEnabled = true
-                            setInUse(machineName.text as String, "Open")
+                            setInUse(machineName.text as String, "Start", "20")
                         }
                     }
                     timer.start()
                 }else{
-                    availability.text = "Open"
-                    setInUse(machineName.text as String, "Open")
+                    availability.text = "Start"
+                    setInUse(machineName.text as String, "Start")
                 }
             }
         }

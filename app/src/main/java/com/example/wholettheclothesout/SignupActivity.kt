@@ -35,15 +35,15 @@ class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate(Bundle?) called")
-        setContentView(R.layout.activity_main)
-        loginButton = findViewById(R.id.loginButton)
+        setContentView(R.layout.activity_signup)
+        loginButton = findViewById(R.id.signupButton2)
 //        emailAddress = findViewById(R.id.emailAddress).text.toString()
 //        password = findViewById(R.id.password).text.toString()
         database = Firebase.database.reference
         auth = Firebase.auth
 
         loginButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             //createAccount("bhailu@gustavus.edu", "1234bam")
             //signIn("bhailu@gustavus.edu", "1234bam")
             startActivity(intent)

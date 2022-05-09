@@ -14,15 +14,6 @@
         android:text="@string/welcome_message"
         android:textColor="@color/black"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="90dp"
-        android:textSize="18dp"
-        android:text="@string/purpose_message"
-        android:textColor="@color/black"/>
-
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
@@ -31,6 +22,14 @@
         android:layout_marginTop="400dp"
         android:text="@string/login_button">
     </Button>
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="450dp"
+        android:text="@string/signup_button">
+    </Button>
 
     <EditText
         android:id="@+id/emailAddress"
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:hint="Email Address"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="240dp"/>
+        android:layout_marginTop="200dp"/>
 
     <EditText
         android:id="@+id/password"
@@ -49,10 +48,10 @@
         android:layout_marginTop="300dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="550dp"
         android:textSize="18dp"
         android:text="@string/unique_id"
         android:textColor="@color/black"/>
