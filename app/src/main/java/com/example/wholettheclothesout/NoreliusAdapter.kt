@@ -39,7 +39,7 @@ class NoreliusAdapter(
         holder.machineName.text = itemsViewModel.getMachineName
         holder.availability.text = itemsViewModel.getAvailability
         holder.countTimer.setText(itemsViewModel.getCountTime)
-        holder.availability.isEnabled = holder.availability.text=="Open"
+        holder.availability.isEnabled = holder.availability.text=="Start"
 
 //        holder.gracePeriod.text = itemsViewModel.getGracePeriod
     }
@@ -81,7 +81,7 @@ class NoreliusAdapter(
 
                 val available = availability.text
 
-                if (available == "Open"){
+                if (available == "Start"){
                     availability.text = "In-Use"
                     availability.isEnabled = false
                     setInUse(machineName.text as String,"In-Use")
@@ -95,18 +95,15 @@ class NoreliusAdapter(
 
                         override fun onFinish() {
                             Log.d(TAG, "Time's finished!")
-                            countTimer.setText("!!!")
-                            setInUse(machineName.text as String, "In-Use", "!!!")
-                            availability.text = "Open"
+                            availability.text = "Start"
                             availability.isEnabled = true
-
-                            setInUse(machineName.text as String, "Open")
+                            setInUse(machineName.text as String, "Start", "20")
                         }
                     }
                     timer.start()
                 }else{
-                    availability.text = "Open"
-                    setInUse(machineName.text as String, "Open")
+                    availability.text = "Start"
+                    setInUse(machineName.text as String, "Start")
                 }
             }
         }

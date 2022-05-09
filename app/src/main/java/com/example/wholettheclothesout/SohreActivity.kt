@@ -174,7 +174,7 @@ class SohreActivity : AppCompatActivity(), SohreAdapter.OnItemClickListener {
                         playerModel.setCountTime(machineVal["Timer"].toString())
                         playersModelArrayList.add(playerModel)
                     }
-                    setView(playersModelArrayList)
+//                    setView(playersModelArrayList.sortedWith(compareBy({ it. })))
                 }
             }
 
@@ -222,10 +222,10 @@ class SohreActivity : AppCompatActivity(), SohreAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-        val playersModelArrayList = ArrayList<UserModal>()
-        Log.d(TAG, "Item $position")
-        val clickedItem: UserModal = playersModelArrayList[position]
-        Log.d(TAG, "${clickedItem.getMachineName}")
+//        val playersModelArrayList = ArrayList<UserModal>()
+//        Log.d(TAG, "Item $position")
+//        val clickedItem: UserModal = playersModelArrayList[position]
+//        Log.d(TAG, "${clickedItem.getMachineName}")
     }
 
     private fun requestJSON() {

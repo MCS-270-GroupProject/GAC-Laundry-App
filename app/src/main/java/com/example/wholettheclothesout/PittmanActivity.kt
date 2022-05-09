@@ -222,10 +222,10 @@ class PittmanActivity : AppCompatActivity(), PittmanAdapter.OnItemClickListener 
     }
 
     override fun onItemClick(position: Int) {
-        val playersModelArrayList = ArrayList<UserModal>()
-        Log.d(TAG, "Item $position")
-        val clickedItem: UserModal = playersModelArrayList[position]
-        Log.d(TAG, "${clickedItem.getMachineName}")
+//        val playersModelArrayList = ArrayList<UserModal>()
+//        Log.d(TAG, "Item $position")
+//        val clickedItem: UserModal = playersModelArrayList[position]
+//        Log.d(TAG, "${clickedItem.getMachineName}")
     }
 
     private fun requestJSON() {

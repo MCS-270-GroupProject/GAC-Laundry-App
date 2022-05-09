@@ -31,8 +31,11 @@
             android:id="@+id/countTime"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:focusable="false"
             android:textSize="20dp"
             android:inputType="text"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:background="@null"/>
 
 </LinearLayout>

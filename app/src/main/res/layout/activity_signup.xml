@@ -11,20 +11,11 @@
         android:layout_marginTop="44dp"
         android:textStyle="bold"
         android:textSize="24dp"
-        android:text="@string/welcome_message"
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="44dp"
-        android:textStyle="bold"
-        android:textSize="24dp"
         android:text="@string/signup_message"
         android:textColor="@color/black"/>
 
     <Button
-        android:id="@+id/signupButton"
+        android:id="@+id/signupButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -33,7 +24,7 @@
     </Button>
 
     <EditText
-        android:id="@+id/emailAddress"
+        android:id="@+id/emailAddress2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email Address"
@@ -41,7 +32,7 @@
         android:layout_marginTop="200dp"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -56,8 +47,5 @@
         android:textSize="18dp"
         android:text="@string/unique_id"
         android:textColor="@color/black"/>
-
-
-
 
 </FrameLayout>
