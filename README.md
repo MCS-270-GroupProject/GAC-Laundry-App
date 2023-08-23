@@ -49,4 +49,4 @@ _Who Let The Clothes Out?_ taught the team invaluable lessons in app development
 ## License
 This project is licensed under the MIT License. See LICENSE for more details.
 
-Explore the app, and feel free to contribute to the project. Thank you for being a part of the _Who Let The Clothes Out?_ community! 🚀🌟
+Explore the app, and feel free to contribute to the project. Thank you for being a part of the _Who Let The Clothes Out?_ community! 🧺
