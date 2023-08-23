@@ -1,32 +1,52 @@
 # Who Let The Clothes Out?
 
-Who Let The Clothes Out is an android app that allows the students to view the timers on the washers and dryers of their dorm buildings so that they won't have to make unnecessary trips to the laundry room just to check if there are any machines available
+Welcome to _Who Let The Clothes Out?_ - an Android app designed to streamline the campus laundry process, saving students time and hassle. Say goodbye to unnecessary trips to the laundry room by knowing the real-time status of washers and dryers at your dorm building.
 
-## How It's Made:
+## Features:
 
-**Tech used:** Android Studio, Kotlin, Firebase Database
+**Real-Time Laundry Status:** Instantly check the availability of washers and dryers in your dorm building.
 
-The app features a home page that displays a list of dorm buildings for which the student can view the status of the laundry machines for a particular buillding. Upon choosing a building, the student is displayed a list of laundry machines in that building with the status of each machine along with a timer if it's being used. The students can not only view the status of the machine but also set a timer for a new machine they're using. No one else but the person using the particular machine can change the status of the machine (in the case he wants to remove the clothes early or put them in for longer). This is achieved by using a "login" system for each machine: providing each student with a temporary unique ID for their machine which can be used to alter it's status. 
+**Effortless Planning:** View machine timers and make informed decisions about when to do your laundry.
 
-Although the timers are started locally, everyone using the app can view the status of the machine along with it's timer dynamically. This global application was achieved by implementing Firebase Database that stores the value of the timer for each machine. This value is synced with the timer of the app whereby data updates are sent every time a second elapses on the timer, thus allowing every other device to see this change in the timer dynamically and globally.
+**Personal Timers:** Set timers for the machines you're using, and even extend or end cycles as needed.
+
+## How It Works
+
+**Built with:** Android Studio (Kotlin), Firebase Database
+
+**1. Select Your Dorm:** Choose your dorm building from the app's home page to see the status of its laundry machines.
+
+**2. Machine Status:** View a list of machines with their real-time status and timers. Identify available machines at a glance.
+
+**3. Personal Timer:** Set timers for the machines you're using. Only you can adjust the status of your selected machine.
+
+**4. Global Timer Sync:** Firebase Database ensures timers are synchronized across all devices in real time, making sure you're always in the loop.
 
 ## Future Changes
 
-- A login page to verify if the user is a student of Gustavus
-- A master tablet/kiosk with the app installed in each laundry room to set the timer for the machines
-- Notification displaying the machine timers and a message when laundry is done
-- Queue system
-- A more efficient "login" system for machines
-- A more efficient timer
+We're committed to enhancing your laundry experience:
+
+**Student Verification:** Implement a login page to ensure only Gustavus students access the app.
+
+**Laundry Kiosk:** Set up tablets with the app in laundry rooms for convenient timer setting.
+
+**Stay Notified:** Get notifications when your laundry is done or when a machine is available.
+
+**Smarter Queue:** Develop a system to manage machine queues more effectively.
+
+**Enhanced Login:** Explore ways to make our login system even more user-friendly.
+
+**Optimized Timers:** Investigate ways to improve timer accuracy and efficiency.
 
   
 ## Optimizations
 
-*(optional)*
+**Predictive Analytics:** Use machine usage data to predict busy times and help users plan ahead.
 
 ## Lessons Learned:
-
+_Who Let The Clothes Out?_ taught the team invaluable lessons in app development, real-time synchronization, and database management. We learned that seamless data sharing is essential and practical solutions can significantly enhance daily routines.
 
 ## License
+This project is licensed under the MIT License. See LICENSE for more details.
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+Explore the app, and feel free to contribute to the project. Thank you for being a part of the _Who Let The Clothes Out?_ community! 🚀🌟
