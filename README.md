@@ -47,6 +47,4 @@ We're committed to enhancing your laundry experience:
 _Who Let The Clothes Out?_ taught the team invaluable lessons in app development, real-time synchronization, and database management. We learned that seamless data sharing is essential and practical solutions can significantly enhance daily routines.
 
 ## License
-This project is licensed under the MIT License. See LICENSE for more details.
-
 Explore the app, and feel free to contribute to the project. Thank you for being a part of the _Who Let The Clothes Out?_ community! 🧺
